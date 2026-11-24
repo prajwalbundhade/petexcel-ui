@@ -12,3 +12,67 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.carousel-track{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 .testimonial-brand{display:grid;place-items:center;font-size:9px;font-weight:800;letter-spacing:-.03em;color:#151515}
 .video-card{margin:0}.video-card video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.72)}.video-card .play{border:0;padding:0 0 0 3px;cursor:pointer}.video-card .play[hidden]{display:none}
+@media(min-width:900px){
+  body{font-size:16px}
+  .main-nav{font-size:13px;gap:30px}
+  .btn{font-size:14px;min-height:50px;padding:15px 30px}
+  .hero h1{font-size:clamp(52px,5.8vw,84px)}
+  .hero-lead{font-size:18px;max-width:560px}
+  .display-heading{font-size:clamp(52px,5.8vw,84px)}
+  .client-section .display-heading{margin-bottom:52px}
+  .section-heading h2{font-size:clamp(52px,5.7vw,84px)}
+  .section-heading p{font-size:16px;line-height:1.55}
+  .compact-heading h2{font-size:clamp(46px,4.8vw,70px)}
+  .services{padding:118px 24px 110px}
+  .services-heading{margin-bottom:100px}
+  .service-info{padding:22px 21px 55px}
+  .service-info h3{font-size:26px;margin-bottom:13px}
+  .service-info p{font-size:15px;line-height:1.58}
+  .service-symbol{width:40px;height:40px;font-size:20px}
+  .founders{padding-top:82px;padding-bottom:82px;gap:46px}
+  .founder-card,.founder-portrait{min-height:696px}
+  .founder-role{font-size:21px;margin-top:38px}
+  .founder-portrait h3{font-size:clamp(56px,4.2vw,68px)}
+  .founder-bio{font-size:16px;line-height:1.64;padding:48px 46px;gap:16px}
+  .team-section{padding-top:88px;padding-bottom:68px}
+  .team-section .section-heading h2{font-size:clamp(52px,5.2vw,78px)}
+  .team-section .section-heading p{font-size:16px}
+  .team-track{gap:16px}
+  .team-card{height:375px}
+  .team-card h3{font-size:31px}
+  .team-card p{font-size:15px}
+  .challenges{padding-top:90px;padding-bottom:102px}
+  .challenge-card{min-height:300px;padding:26px 18px 24px}
+  .challenge-icon{font-size:38px;margin-bottom:22px}
+  .challenge-card h3{font-size:22px;margin-bottom:16px}
+  .challenge-card p{font-size:15px;line-height:1.55}
+  .framework{padding-top:88px;padding-bottom:110px}
+  .framework-card{min-height:390px;padding:0 22px 28px}
+  .framework-card h3{font-size:29px}
+  .framework-card p{font-size:15px;line-height:1.58}
+  .framework-symbol{font-size:48px}
+  .testimonials{padding-top:92px;padding-bottom:100px}
+  .testimonial-card{min-height:218px;padding:22px 21px 24px}
+  .testimonial-avatar{width:46px;height:46px}
+  .stars{font-size:15px}
+  .testimonial-card>p{font-size:14px;line-height:1.55}
+  .testimonial-card h3{font-size:13px}
+  .alliance{padding-top:94px;padding-bottom:100px}
+  .video-grid{gap:22px}
+  .video-card{aspect-ratio:1/1.3}
+  .alliance-copy h2{font-size:clamp(50px,5vw,74px)}
+  .alliance-copy p,.impact-copy p{font-size:16px;line-height:1.65}
+  .alliance-cta{padding-top:76px;padding-bottom:92px}
+  .alliance-mark img{width:min(390px,100%);height:270px}
+  .impact{padding-top:92px;padding-bottom:102px}
+  .impact-copy h2{font-size:clamp(46px,4.8vw,72px)}
+  .impact-photo{height:auto;aspect-ratio:592/432}
+  .site-footer{padding-top:82px}
+  .footer-columns h3,.subscribe-card h3{font-size:26px}
+  .footer-columns>div a{font-size:13px}
+  .social-links a{width:70px;height:70px;font-size:27px}
+  .subscribe-card{padding:25px 24px 20px;gap:10px}
+  .subscribe-card p,.subscribe-card label{font-size:13px}
+  .subscribe-card input{font-size:14px;height:42px}
+  .footer-top h2{font-size:clamp(46px,4.8vw,72px)}
+}
