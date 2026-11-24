@@ -11,7 +11,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--black)}
+html{scroll-behavior:smooth;background:var(--black);overflow-x:hidden}
 body{margin:0;background:var(--black);color:var(--white);font-family:var(--body);font-size:16px;line-height:1.55;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -243,46 +243,107 @@ button{font:inherit}
   .footer-columns{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
-  .site-header{height:72px;padding:0 20px}
-  .brand,.brand-mark{width:68px;height:64px}
+  .site-header{height:72px;padding:0 18px}
+  .brand,.brand-mark{width:64px;height:58px}
   .menu-toggle{display:block;margin-left:auto}
   .main-nav{display:none;position:absolute;top:72px;left:0;right:0;background:#0b0b0b;padding:18px 24px 24px;flex-direction:column;align-items:flex-start;gap:18px;margin:0;border-bottom:1px solid #454200}
   .main-nav.open{display:flex}
   .header-cta{display:none}
-  .hero{display:flex;flex-direction:column;min-height:0;padding:44px 24px 0;align-items:flex-start}
-  .hero-copy{padding:0 0 24px}
-  .hero h1{font-size:clamp(46px,12vw,72px)}
-  .hero-lead{font-size:15px;margin:18px 0 22px}
+  .hero{display:flex;flex-direction:column;min-height:0;padding:34px 20px 0;align-items:flex-start}
+  .hero-copy{padding:0 0 22px}
+  .hero h1{font-size:clamp(42px,11vw,56px);line-height:.98}
+  .hero-lead{font-size:15px;margin:16px 0 22px}
+  .hero-cta{min-width:0;min-height:46px;font-size:14px;padding:12px 24px}
   .hero-visual{width:100%;height:auto;aspect-ratio:1/1;margin:0}
-  .display-heading,.section-heading h2,.compact-heading h2,.alliance-copy h2,.impact-copy h2,.footer-top h2{font-size:44px}
+  .hero-glow{width:88%;height:88%;bottom:5%}
+  .hero-orbit{width:76%;height:76%;bottom:8%}
+  .orbit-two{width:92%;height:92%;bottom:0}
+  .display-heading,.section-heading h2,.team-section .section-heading h2,.compact-heading h2,.alliance-copy h2,.impact-copy h2,.footer-top h2{font-size:clamp(36px,9.6vw,46px);line-height:1.05}
+  .section-heading{padding:0 8px;margin-bottom:32px}
+  .section-heading p{font-size:14px;line-height:1.55}
+  .services-heading{margin-bottom:32px}
   .heading-paw-svg,.impact-paw-svg,.cta-paw-svg{display:none}
-  .client-section{min-height:0;padding:48px 18px}
+  .client-section{min-height:0;padding:48px 18px 56px}
+  .client-section .display-heading{margin-bottom:32px}
   .client-logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .client-logo{width:100%;height:76px}
+  .client-logo{width:100%;height:74px;padding:8px 10px}
   .client-logo-doodle{grid-column:1/-1;width:calc(50% - 5px);justify-self:center}
-  .services{padding:52px 14px 64px}
-  .service-carousel{padding:0 34px}
-  .service-card{flex:0 0 min(82vw,340px);min-width:0}
-  .service-dots{display:flex}
-  .explore-cta{min-width:0;min-height:54px;font-size:14px;padding:14px 22px}
-  .founders{padding:56px 17px;gap:28px}
+  .services{padding:52px 14px 60px}
+  .service-carousel{padding:0 24px}
+  .service-track{gap:16px;padding:8px 0 12px}
+  .service-card{flex:0 0 100%;min-width:100%}
+  .service-art{height:178px;padding:20px 28px}
+  .service-art img{max-height:130px}
+  .service-info{height:auto;min-height:265px;padding:20px 20px 58px}
+  .service-info h3{font-size:22px}
+  .service-info p{font-size:14px;line-height:1.55}
+  .carousel-arrow{width:32px;height:32px}
+  .carousel-arrow img{width:10px;height:12px}
+  .service-dots{display:flex;margin:14px auto 0}
+  .services-cta-wrap{margin-top:24px;width:100%}
+  .explore-cta{min-width:0;width:100%;max-width:340px;min-height:52px;font-size:14px;padding:14px 20px;text-align:center}
+  .founders{padding:54px 16px;gap:28px}
+  .founders .display-heading{margin-bottom:4px}
   .founder-card{grid-template-columns:1fr;border-radius:20px;min-height:0}
-  .founder-portrait{min-height:460px;grid-row:1}
-  .founder-bio{padding:26px 22px;font-size:15px}
+  .founder-portrait{min-height:470px;grid-row:1;padding-top:6px}
+  .founder-role{font-size:18px;margin-top:24px}
+  .founder-portrait h3{font-size:40px;line-height:1.0;margin:8px 12px 0}
+  .founder-portrait img{height:69%}
+  .founder-bio{padding:24px 20px;font-size:14px;line-height:1.58;gap:13px}
   .founder-jahanvi .founder-bio{grid-row:2}
   .founder-jahanvi .founder-portrait{grid-row:1}
-  .team-card{flex-basis:74vw;max-width:292px;height:460px}
-  .challenge-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .challenges,.framework,.testimonials,.alliance{padding:56px 17px}
-  .testimonial-grid{grid-template-columns:1fr}
-  .video-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .play{width:46px;height:46px}
+  .team-section{padding:54px 0 48px}
+  .team-section .section-heading{padding:0 20px;margin-bottom:32px}
+  .team-track{padding:0 24px 8px;gap:14px}
+  .team-card{flex:0 0 280px;height:440px;padding:28px 16px 0}
+  .team-card h3{font-size:28px;margin-bottom:8px}
+  .team-card p{font-size:14px}
+  .team-card:nth-child(1) img{width:auto;max-width:none;height:440px;bottom:0}
+  .team-card:nth-child(2) img{width:280px;height:305px;bottom:0}
+  .team-card:nth-child(3) img{width:auto;max-width:none;height:455px;bottom:0}
+  .team-card:nth-child(4) img{width:auto;max-width:none;height:690px;bottom:-250px}
+  .team-card:nth-child(5) img{width:auto;max-width:none;height:495px;bottom:-85px}
+  .team-card:nth-child(6) img{width:280px;height:305px;bottom:0}
+  .challenges,.framework,.testimonials,.alliance{padding:54px 16px}
+  .compact-heading{margin-bottom:32px}
+  .challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .challenge-card{min-height:225px;padding:20px 12px 18px}
+  .challenge-card:last-child{grid-column:1/-1;width:calc(50% - 5px);justify-self:center}
+  .challenge-icon{height:40px;margin-bottom:14px}
+  .challenge-icon svg{width:36px;height:36px}
+  .challenge-card h3{font-size:18px;margin-bottom:10px}
+  .challenge-card p{font-size:13px;line-height:1.48}
+  .framework-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 12px;margin-top:36px}
+  .framework .eyebrow{font-size:15px}
+  .framework-card{min-height:290px;padding:0 12px 20px}
+  .framework-letter{width:48px;height:48px;font-size:25px;top:-24px;margin-bottom:6px}
+  .framework-symbol{height:46px;margin:-6px 0 14px}
+  .framework-symbol svg,.framework-symbol img{width:44px;height:44px}
+  .framework-card h3{font-size:21px;margin-bottom:10px}
+  .framework-card p{font-size:13px;line-height:1.48}
+  .testimonial-grid{grid-template-columns:1fr;gap:14px}
+  .testimonial-card{min-height:0;padding:20px 18px}
+  .testimonial-card>p{font-size:14px}
+  .video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .video-card{border-width:1.5px;border-radius:12px}
+  .video-card .play{width:44px;height:44px;border-width:2.5px}
+  .video-card .play svg{width:14px;height:16px}
   .alliance-cta{padding:48px 20px 56px;grid-template-columns:1fr;gap:20px;text-align:center}
-  .impact{padding:52px 20px 60px;grid-template-columns:1fr;gap:24px}
+  .alliance-mark img{width:230px}
+  .alliance-copy p{font-size:15px}
+  .alliance-btn{min-width:0;min-height:48px;font-size:14px;padding:12px 26px}
+  .impact{padding:52px 20px 60px;grid-template-columns:1fr;gap:24px;text-align:center}
+  .impact-copy p{font-size:15px;margin:0 auto}
+  .site-footer{padding:52px 20px 24px}
+  .footer-top{margin-bottom:40px}
+  .footer-top h2{margin-bottom:24px}
   .social-links{gap:14px}
-  .social-links a{width:92px;height:92px}
-  .social-links a img,.social-links a svg{width:44px;height:44px}
-  .footer-columns{grid-template-columns:repeat(2,1fr);gap:24px 18px}
-  .subscribe-card{grid-column:1/-1}
+  .social-links a{width:88px;height:88px}
+  .social-links a img,.social-links a svg{width:42px;height:42px}
+  .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 18px}
+  .footer-columns h3,.subscribe-card h3{font-size:24px}
+  .footer-columns>div a{font-size:13px}
+  .subscribe-card{grid-column:1/-1;padding:22px 18px 18px}
+  .footer-bottom{margin-top:32px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.carousel-track{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
