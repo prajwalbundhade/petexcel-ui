@@ -59,22 +59,28 @@
     const playButton = card.querySelector(".play");
     if (!video || !playButton) return;
 
+    let started = false;
     playButton.addEventListener("click", () => {
+      if (!started) {
+        video.currentTime = 0;
+        started = true;
+      }
+      video.muted = false;
       video.controls = true;
       video.play().catch(() => {
-        playButton.textContent = "!";
         playButton.setAttribute("aria-label", "Video could not be played");
       });
     });
     video.addEventListener("play", () => { playButton.hidden = true; });
     video.addEventListener("pause", () => {
       playButton.hidden = false;
-      playButton.textContent = "▶";
       playButton.setAttribute("aria-label", "Play video");
     });
     video.addEventListener("ended", () => {
+      started = false;
       video.controls = false;
-      video.currentTime = 0;
+      video.muted = true;
+      video.currentTime = 0.5;
       playButton.hidden = false;
     });
   });
