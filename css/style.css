@@ -11,3 +11,4 @@
 @media(max-width:420px){.hero h1{font-size:48px}.display-heading{font-size:43px}.section-heading h2,.team-section .section-heading h2{font-size:37px}.challenge-grid{grid-template-columns:1fr 1fr}.framework-grid{grid-template-columns:1fr 1fr}.framework-card{min-height:318px}.footer-columns{grid-template-columns:1fr 1fr}.impact-copy h2{font-size:43px}.social-links a{height:54px;width:54px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.carousel-track{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 .testimonial-brand{display:grid;place-items:center;font-size:9px;font-weight:800;letter-spacing:-.03em;color:#151515}
+.video-card{margin:0}.video-card video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.72)}.video-card .play{border:0;padding:0 0 0 3px;cursor:pointer}.video-card .play[hidden]{display:none}

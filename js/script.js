@@ -54,6 +54,31 @@
     renderDots();
   });
 
+  document.querySelectorAll(".video-card").forEach((card) => {
+    const video = card.querySelector("video");
+    const playButton = card.querySelector(".play");
+    if (!video || !playButton) return;
+
+    playButton.addEventListener("click", () => {
+      video.controls = true;
+      video.play().catch(() => {
+        playButton.textContent = "!";
+        playButton.setAttribute("aria-label", "Video could not be played");
+      });
+    });
+    video.addEventListener("play", () => { playButton.hidden = true; });
+    video.addEventListener("pause", () => {
+      playButton.hidden = false;
+      playButton.textContent = "▶";
+      playButton.setAttribute("aria-label", "Play video");
+    });
+    video.addEventListener("ended", () => {
+      video.controls = false;
+      video.currentTime = 0;
+      playButton.hidden = false;
+    });
+  });
+
   const form = document.getElementById("subscribe-form");
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
