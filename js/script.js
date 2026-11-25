@@ -59,29 +59,44 @@
     const playButton = card.querySelector(".play");
     if (!video || !playButton) return;
 
-    let started = false;
+    let soundMode = false;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.play().catch(() => {});
+
     playButton.addEventListener("click", () => {
-      if (!started) {
-        video.currentTime = 0;
-        started = true;
-      }
+      soundMode = true;
+      video.currentTime = 0;
+      video.loop = false;
       video.muted = false;
       video.controls = true;
+      playButton.hidden = true;
       video.play().catch(() => {
+        soundMode = false;
+        video.muted = true;
+        video.loop = true;
+        video.controls = false;
+        playButton.hidden = false;
         playButton.setAttribute("aria-label", "Video could not be played");
       });
     });
-    video.addEventListener("play", () => { playButton.hidden = true; });
     video.addEventListener("pause", () => {
+      if (!soundMode) return;
       playButton.hidden = false;
-      playButton.setAttribute("aria-label", "Play video");
+      playButton.setAttribute("aria-label", "Play video with sound");
+    });
+    video.addEventListener("play", () => {
+      if (soundMode) playButton.hidden = true;
     });
     video.addEventListener("ended", () => {
-      started = false;
+      soundMode = false;
       video.controls = false;
       video.muted = true;
-      video.currentTime = 0.5;
+      video.loop = true;
+      video.currentTime = 0;
       playButton.hidden = false;
+      video.play().catch(() => {});
     });
   });
 
