@@ -176,11 +176,8 @@ button{font:inherit}
 .alliance{padding:94px max(calc((100% - var(--content))/2),30px) 104px;background:radial-gradient(ellipse at center,rgba(255,251,1,0.1),transparent 65%)}
 .alliance .section-heading{max-width:1260px}
 .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.video-card{margin:0;aspect-ratio:1/1.5;border:2px solid #fff000;border-radius:16px;background:#111;position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:0 0 24px rgba(255,240,0,0.28)}
+.video-card{margin:0;aspect-ratio:1/1.5;border:2px solid #fff000;border-radius:16px;background:#111;position:relative;overflow:hidden;box-shadow:0 0 24px rgba(255,240,0,0.28)}
 .video-card video{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;background:#111}
-.video-card .play{position:relative;z-index:2;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:#fffb01;border:3px solid #ffffff;color:#080808;padding:0 0 0 3px;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,0.55);transition:transform .2s,box-shadow .2s}
-.video-card .play:hover{transform:scale(1.08);box-shadow:0 0 28px rgba(255,240,0,0.7)}
-.video-card .play[hidden]{display:none}
 
 /* Alliance CTA */
 .alliance-cta{padding:88px max(calc((100% - var(--content))/2),30px) 96px;display:grid;grid-template-columns:.76fr 1.24fr;gap:56px;align-items:center}
@@ -327,8 +324,6 @@ button{font:inherit}
   .testimonial-card>p{font-size:14px}
   .video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .video-card{border-width:1.5px;border-radius:12px}
-  .video-card .play{width:44px;height:44px;border-width:2.5px}
-  .video-card .play svg{width:14px;height:16px}
   .alliance-cta{padding:48px 20px 56px;grid-template-columns:1fr;gap:20px;text-align:center}
   .alliance-mark img{width:230px}
   .alliance-copy p{font-size:15px}

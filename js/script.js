@@ -54,50 +54,11 @@
     renderDots();
   });
 
-  document.querySelectorAll(".video-card").forEach((card) => {
-    const video = card.querySelector("video");
-    const playButton = card.querySelector(".play");
-    if (!video || !playButton) return;
-
-    let soundMode = false;
+  document.querySelectorAll(".video-card video").forEach((video) => {
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
     video.play().catch(() => {});
-
-    playButton.addEventListener("click", () => {
-      soundMode = true;
-      video.currentTime = 0;
-      video.loop = false;
-      video.muted = false;
-      video.controls = true;
-      playButton.hidden = true;
-      video.play().catch(() => {
-        soundMode = false;
-        video.muted = true;
-        video.loop = true;
-        video.controls = false;
-        playButton.hidden = false;
-        playButton.setAttribute("aria-label", "Video could not be played");
-      });
-    });
-    video.addEventListener("pause", () => {
-      if (!soundMode) return;
-      playButton.hidden = false;
-      playButton.setAttribute("aria-label", "Play video with sound");
-    });
-    video.addEventListener("play", () => {
-      if (soundMode) playButton.hidden = true;
-    });
-    video.addEventListener("ended", () => {
-      soundMode = false;
-      video.controls = false;
-      video.muted = true;
-      video.loop = true;
-      video.currentTime = 0;
-      playButton.hidden = false;
-      video.play().catch(() => {});
-    });
   });
 
   const form = document.getElementById("subscribe-form");
